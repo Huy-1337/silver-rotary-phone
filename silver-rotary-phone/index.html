@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Snake — HTML/CSS/JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <h1 class="title">Snake</h1>
+        <div class="controls">
+          <button id="btn-restart" class="btn" aria-label="Restart">Restart</button>
+          <button id="btn-pause" class="btn" aria-label="Pause/Resume">Pause</button>
+        </div>
+      </header>
+
+      <section class="hud" aria-live="polite">
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="best">Best: <span id="best">0</span></div>
+        <div class="speed">Speed: <span id="speed">1x</span></div>
+      </section>
+
+      <section class="stage">
+        <canvas id="game" width="480" height="480" aria-label="Snake game board" role="img"></canvas>
+
+        <div class="overlay" id="overlay" hidden>
+          <div class="overlay-card">
+            <h2 id="overlay-title">Paused</h2>
+            <p id="overlay-subtitle">Press Space or tap Resume</p>
+            <div class="overlay-actions">
+              <button id="overlay-resume" class="btn primary">Resume</button>
+              <button id="overlay-restart" class="btn">Restart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="touch-controls" aria-label="On-screen controls">
+        <div class="dpad">
+          <button class="dpad-btn" data-dir="up" aria-label="Up">▲</button>
+          <div class="dpad-middle">
+            <button class="dpad-btn" data-dir="left" aria-label="Left">◀</button>
+            <button class="dpad-btn" data-dir="right" aria-label="Right">▶</button>
+          </div>
+          <button class="dpad-btn" data-dir="down" aria-label="Down">▼</button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div>Use arrow keys or WASD. Space to pause.</div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
